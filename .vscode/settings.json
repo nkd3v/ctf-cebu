@@ -1,0 +1,19 @@
+{
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MariaDB",
+      "name": "test",
+      "username": "root",
+      "database": "airbnb",
+      "password": ""
+    }
+  ],
+  "appService.defaultWebAppToDeploy": "/subscriptions/b2d22dc4-196a-45b0-b0c5-9ae7853a2eb2/microsoft.web/sites/subscriptions/b2d22dc4-196a-45b0-b0c5-9ae7853a2eb2/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/ctf-lonely-doge",
+  "appService.deploySubpath": "."
+}
