@@ -6,8 +6,18 @@ const app = express();
 app.disable('x-powered-by');
 app.set('view engine', 'ejs');
 
-app.use(cookieParser('secret'));
-app.use(express.static('public'));
+app.use(cookieParser('qiC3sxdq68VyoqwSTbXd9o3fqDjnjmBnWKLLkNB9iYHhUurWSrwMYoG8ZxMq28QGYy5RNNcz7juLaVVWTBgzmSP85wSpXYTetxKQnuXcsZDXykppAno3Hf68i97dTU4d'));
+app.use(express.static('public', { maxAge: '1h' }));
+
+app.use((req, res, next) => {
+  res.set('X-XSS-Protection', '1; mode=block');
+  res.set('X-Frame-Options', 'SAMEORIGIN');
+  res.set('X-Content-Type-Options', 'nosniff');
+  res.set('Referrer-Policy', 'same-origin');
+  res.set('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:;");
+  res.set('Cache-Control', 'public, max-age=3600');
+  next();
+});
 
 app.get('/lonely-doge', (req, res) => {
 

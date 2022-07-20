@@ -1,4 +1,11 @@
 node_modules
+.package-lock.json
+
 .vscode
-vercel.json
+
 .dockerignore
+
+.git
+.gitignore
+
+vercel.json
